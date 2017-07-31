@@ -22,6 +22,12 @@ If the output is `+channel` you should be good to go.
 Put the following in your `.vimrc` (and customize bindings to your liking):
 
 ```
+let mapleader=" " 
+" quickly open vimrc
+
+" remap ctrl-w to space w
+:nnoremap <leader>w <C-w>
+
 " Starts an async psql job, prompting for the psql arguments.
 " Also opens a scratch buffer where output from psql is directed.
 noremap <leader>po :VipsqlOpenSession<CR>
@@ -47,7 +53,6 @@ noremap <leader>pb :VipsqlSendBuffer<CR>
 " Sends `SIGINT` (C-c) to the psql process.
 noremap <leader>pc :VipsqlSendInterrupt<CR>
 ```
-
 
 ### Pull the source code With [Pathogen](https://github.com/tpope/vim-pathogen) into vim Plugin
 
@@ -104,10 +109,19 @@ Type out this command in the top buffer:
 
     select 'vpns are illegal in Russia'; 
 
-Put the cursor over the line and type <leader>pl (for me it is space pl) It runs:
+Put the cursor over the line and type `<leader>pl` (for me it is space pl) It runs:
 
-![Demo image](http://i.imgur.com/nRqHTnA.png)
+![Demo image1](http://i.imgur.com/nRqHTnA.png)
 
+press `Ctrl-w k` and then `Ctrl-w j` to move cursor to top or bottom buffer.
+
+### What happens on SQL error?
+
+type an error and press `<leader>pl` on the line:
+
+![Demo image2](http://i.imgur.com/9VxxqzX.png)
+
+### asdf
 
 
 # Notes
