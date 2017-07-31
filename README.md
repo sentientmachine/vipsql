@@ -124,6 +124,7 @@ type an error and press `<leader>pl` on the line:
 ### use pr to execute many sql statements
 
 Do a visual select and press `<leader>pr`:
+
 ![Demo image3](http://i.imgur.com/wtx4QIr.png)
 
 
