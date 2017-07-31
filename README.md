@@ -106,7 +106,9 @@ Type out this command in the top buffer:
 
 Put the cursor over the line and type <leader>pl (for me it is space pl) It runs:
 
-[ http://i.imgur.com/nRqHTnA.png ]
+![Demo image](http://i.imgur.com/nRqHTnA.png)
+
+
 
 # Notes
 
