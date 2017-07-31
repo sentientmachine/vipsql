@@ -1,6 +1,6 @@
 # vipsql
 
-A vim-plugin for interacting with psql
+A vim-plugin for interacting with psql, with focus for gentoo installation x86_64 on a PC.
 
 ## Demo
 
@@ -8,44 +8,16 @@ A vim-plugin for interacting with psql
 
 ## Install
 
-### With [Pathogen](https://github.com/tpope/vim-pathogen)
+### Make sure you have +channel feature for vim
 
-    $ cd ~/.vim/bundle && git clone https://github.com/martingms/vipsql
-
-### As a terminal command
-
-To use vipsql in a manner similar to psql, add something like this to your
-`.bashrc` or similar:
-
-    function vipsql {
-        vim -c 'setlocal buftype=nofile | VipsqlOpenSession '$@
-    }
-
-All args are redirected to the psql session, so e.g.
-
-    $ vipsql -d test
-
-will start vim with vipsql already connected to the database `test`.
-
-### Notes
-
-Note that vipsql uses the vim channels feature, so your vim must be at
+vipsql uses the vim channels feature, so your vim must be at
 least version 8, and compiled with `+channel`. To test whether you're compatible, run:
 
     $ vim --version | grep -o +channel
 
 If the output is `+channel` you should be good to go.
 
-Please also note that sending an interrupt (`SIGINT`) to psql (for example to
-cancel a long running query) results in killing the channel in versions of vim
-older than `8.0.0588` due to a bug.
-
-There is currently no support for neovim, and the code is probably horribly
-nonidiomatic, but patches accepted :)
-
-## Configure
-
-### Bindings
+### Add config options to .vimrc
 
 Put the following in your `.vimrc` (and customize bindings to your liking):
 
@@ -76,9 +48,22 @@ noremap <leader>pb :VipsqlSendBuffer<CR>
 noremap <leader>pc :VipsqlSendInterrupt<CR>
 ```
 
-### Options
 
-Configuration options (and their defaults) are:
+### Pull the source code With [Pathogen](https://github.com/tpope/vim-pathogen) into vim Plugin
+
+    $ cd ~/.vim/bundle && git clone https://github.com/martingms/vipsql
+
+### Make vipsql a terminal command for easy access
+
+Add this to your `.bashrc` or similar:
+
+    function vipsql {
+        vim -c 'setlocal buftype=nofile | VipsqlOpenSession '$@
+    }
+
+### Optional config options:
+
+Optional configuration options for the .vimrc (and their defaults) are:
 
 ```
 " Which command to run to get psql. Should be simply `psql` for most.
@@ -90,3 +75,47 @@ let g:vipsql_shell_prompt = "> "
 " What `vim` command to use when opening the scratch buffer
 let g:vipsql_new_buffer_cmd = "rightbelow split"
 ```
+
+### Sanity check for postgreSQL database config:
+
+Make sure you have psql setup correctly, the following command should log you into your postgresql instance:
+
+    $ psql -Upostgres -d yourdatabase
+    
+    psql (9.4.9)
+    Type "help" for help.
+    postgres=# select 'foobar';
+     ?column?
+    ----------
+     foobar 
+    (1 row) 
+
+### Dry run for vipsql from terminal:
+    
+All args are redirected to the psql session, so e.g.
+
+    $ vipsql -Upostgres -d yourdatabase
+
+Will start vim with vipsql already connected to the database `yourdatabase`.
+
+### vipsql sanity check
+
+Type out this command in the top buffer: 
+
+    select 'vpns are illegal in Russia'; 
+
+Put the cursor over the line and type <leader>pl (for me it is space pl) It runs:
+
+[ http://i.imgur.com/nRqHTnA.png ]
+
+# Notes
+
+
+Please also note that sending an interrupt (`SIGINT`) to psql (for example to
+cancel a long running query) results in killing the channel in versions of vim
+older than `8.0.0588` due to a bug.
+
+There is currently no support for neovim, and the code is probably horribly
+nonidiomatic, but patches accepted :)
+
+
