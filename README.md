@@ -77,7 +77,10 @@ Optional configuration options for the .vimrc (and their defaults) are:
 
 ```
 " Which command to run to get psql. Should be simply `psql` for most.
-let g:vipsql_psql_cmd = "psql"
+" let g:vipsql_psql_cmd = "psql"
+" Set optional config options here:
+
+let g:vipsql_psql_cmd = "psql --host=10.20.30.40 -U my_username -d my_database -p 5432"
 
 " The prompt to show when running `:VipsqlShell`
 let g:vipsql_shell_prompt = "> "
