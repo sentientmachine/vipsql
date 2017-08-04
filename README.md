@@ -15,7 +15,12 @@ least version 8, and compiled with `+channel`. To test whether you're compatible
 
     $ vim --version | grep -o +channel
 
+
 If the output is `+channel` you should be good to go.
+
+If you don't have it for whatever reason you'll have to install vim from source.  Here's a link that can help:
+
+https://stackoverflow.com/questions/38770830/how-to-add-channel-and-jobs-features-to-vim
 
 ### Add config options to .vimrc
 
