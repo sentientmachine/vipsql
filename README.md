@@ -6,7 +6,7 @@ A vim-plugin for interacting with psql, with focus for gentoo installation x86_6
 
 [![asciicast demo](https://asciinema.org/a/HTc1gAS2gHxaL7yCECvwKUUPs.png)](https://asciinema.org/a/HTc1gAS2gHxaL7yCECvwKUUPs)
 
-## Install
+## Install for Gentoo x86_64 on PC
 
 ### Make sure you have +channel feature for vim
 
