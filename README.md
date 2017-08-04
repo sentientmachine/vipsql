@@ -133,7 +133,11 @@ Do a visual select and press `<leader>pr`:
 ![Demo image3](http://i.imgur.com/wtx4QIr.png)
 
 
+### Connect to foreign server: 
 
+    vipsql --host="10.20.23.90" -U my_username -d my_database
+
+specify the password???
 
 
 # Notes
