@@ -86,6 +86,17 @@ let g:vipsql_shell_prompt = "> "
 let g:vipsql_new_buffer_cmd = "rightbelow split"
 ```
 
+Optional config options for the ~/.psqlrc
+
+    \set QUIET 1
+    \timing
+    \pset linestyle unicode
+    \pset border 2
+    \pset null ¤
+    \set QUIET 0
+    \conninfo
+
+
 ### Sanity check for postgreSQL database config:
 
 Make sure you have psql setup correctly, the following command should log you into your postgresql instance:
