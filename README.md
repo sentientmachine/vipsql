@@ -157,6 +157,12 @@ specify the password???
 # Notes
 
 
+In the terminal configuration, set the non-ascii characters to Menlo so the unicode "BOX DRAWINGS LIGHT VERTICAL" touch: <br>
+
+![Demo image4](http://i.imgur.com/hJK4Nxe.png)
+
+
+
 Please also note that sending an interrupt (`SIGINT`) to psql (for example to
 cancel a long running query) results in killing the channel in versions of vim
 older than `8.0.0588` due to a bug.
