@@ -153,6 +153,17 @@ Do a visual select and press `<leader>pr`:
 
 specify the password???
 
+### psql and vipsql configuration management strategies
+
+You can specify a psql connection string and cram it all in conninfo string or URI like this: 
+
+    vipsql "postgresql://my_username@my_hostname.com:5432/my_databasename"
+
+Which you could cram into a ~/.bashrc alias.
+
+You can set environment variables so psql knows what to do:
+
+    PGDATABASE=my_database PGHOST=my_hostname PGPORT=5432 PGUSER=my_user psql
 
 # Notes
 
