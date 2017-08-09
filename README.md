@@ -182,3 +182,6 @@ There is currently no support for neovim, and the code is probably horribly
 nonidiomatic, but patches accepted :)
 
 
+# License
+
+Copyright (c) Martin Gammelsæter. Distributed under the same terms as Vim itself. See :help license.
